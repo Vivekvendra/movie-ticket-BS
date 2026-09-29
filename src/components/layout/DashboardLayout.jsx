@@ -3,7 +3,7 @@ import Sidebar from './Sidebar'
 
 export default function DashboardLayout() {
   return (
-    <div className="flex h-screen bg-[#0a0a0a] overflow-hidden">
+    <div className="flex h-screen bg-[#0c0d14] overflow-hidden">
       <Sidebar />
       <main className="flex-1 overflow-y-auto">
         <Outlet />

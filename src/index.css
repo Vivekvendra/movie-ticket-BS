@@ -6,9 +6,15 @@
   padding: 0;
 }
 
+html {
+  /* Set root scale to 110% so standard 100% browser zoom delivers the optimal 110% proportions & readability */
+  font-size: 110%;
+}
+
 html, body, #root {
   height: 100%;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
@@ -19,12 +25,12 @@ body {
 
 /* Fix browser autofill styling so inputs stay dark */
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
+input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-text-fill-color: #ffffff !important;
-  -webkit-box-shadow: 0 0 0px 1000px #151824 inset !important;
-  box-shadow: 0 0 0px 1000px #151824 inset !important;
+  -webkit-box-shadow: 0 0 0px 1000px #18181f inset !important;
+  box-shadow: 0 0 0px 1000px #18181f inset !important;
   transition: background-color 5000s ease-in-out 0s;
 }
 

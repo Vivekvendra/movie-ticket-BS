@@ -11,10 +11,12 @@ import Login from './pages/auth/Login'
 import Register from './pages/auth/Register'
 import ForgotPassword from './pages/auth/ForgotPassword'
 
-// Dashboard
+// Dashboard & Core Modules
 import Dashboard from './pages/dashboard/Dashboard'
+import MovieList from './pages/movies/MovieList'
+import TheatreList from './pages/theatres/TheatreList'
 
-// Module placeholders
+// Future Module placeholders
 import ComingSoon from './components/ComingSoon'
 
 export default function App() {
@@ -37,8 +39,8 @@ export default function App() {
           >
             <Route path="/" element={<Navigate to="/dashboard" replace />} />
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/movies" element={<ComingSoon title="Module 3: Movie Listing" />} />
-            <Route path="/theatres" element={<ComingSoon title="Module 4: Theatre Listing" />} />
+            <Route path="/movies" element={<MovieList />} />
+            <Route path="/theatres" element={<TheatreList />} />
             <Route path="/seats" element={<ComingSoon title="Module 5: Seat Selection" />} />
             <Route path="/booking" element={<ComingSoon title="Module 6: Ticket Booking" />} />
             <Route path="/payment" element={<ComingSoon title="Module 7: Payment Page" />} />
