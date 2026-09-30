@@ -1,15 +1,5 @@
 @import "tailwindcss";
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  /* Set root scale to 110% so standard 100% browser zoom delivers the optimal 110% proportions & readability */
-  font-size: 110%;
-}
 
 html, body, #root {
   height: 100%;
@@ -18,7 +8,7 @@ html, body, #root {
 }
 
 body {
-  background-color: #0b0c10;
+  background-color: #08090e;
   color: #f1f1f1;
   overflow-x: hidden;
 }
@@ -35,19 +25,20 @@ input:-webkit-autofill:active {
 }
 
 /* Custom scrollbar */
-::-webkit-scrollbar { width: 5px; height: 5px; }
-::-webkit-scrollbar-track { background: #111; }
-::-webkit-scrollbar-thumb { background: #e50914; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #ff1a1a; }
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #0c0d14; }
+::-webkit-scrollbar-thumb { background: #262b40; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #e50914; }
 
 /* Toast overrides */
 .Toastify__toast {
-  background: #1a1a1a !important;
+  background: #141724 !important;
   color: #f1f1f1 !important;
-  border: 1px solid #2a2a2a !important;
-  border-radius: 12px !important;
+  border: 1px solid #23283d !important;
+  border-radius: 14px !important;
   font-family: 'Inter', sans-serif !important;
   font-size: 14px !important;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5) !important;
 }
 .Toastify__progress-bar { background: #e50914 !important; }
 .Toastify__close-button { color: #888 !important; }

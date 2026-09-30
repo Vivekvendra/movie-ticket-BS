@@ -130,7 +130,7 @@ export const INITIAL_THEATRES = [
     reviews: '15.6k',
     phone: '+91 20 6723 3333',
     email: 'help@cinepolis.com',
-    image: 'https://images.unsplash.com/photo-1460881680858-30d870d7bffe?w=800&q=80',
+    image: '/posters/theatre_seasons.jpg',
     facilities: ['15 Mega Screens', 'VIP Recliners', '4DX Dynamic Seats', 'Dolby 7.1', 'Game Zone', 'Food Court'],
     shows: [
       { id: 'S25', time: '10:00 AM', format: '4DX', price: 420, status: 'Available', fillingPct: 40 },
@@ -150,7 +150,7 @@ export const INITIAL_THEATRES = [
     reviews: '9.2k',
     phone: '+91 22 2403 7777',
     email: 'support@mirajcinemas.com',
-    image: 'https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=800&q=80',
+    image: '/posters/theatre_miraj.jpg',
     facilities: ['Dome Screen Dome Cinema', 'Dolby Atmos', 'Spacious Seating', 'Ample Parking', 'Snack Bar'],
     shows: [
       { id: 'S29', time: '11:15 AM', format: 'Dolby Atmos', price: 280, status: 'Available', fillingPct: 35 },

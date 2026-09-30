@@ -192,7 +192,7 @@ export default function Sidebar() {
         <SidebarContent />
       </div>
 
-      <aside className="hidden lg:block w-64 flex-shrink-0 h-screen sticky top-0 z-30">
+      <aside className="hidden lg:flex flex-col w-64 h-screen fixed left-0 top-0 bottom-0 z-30 select-none">
         <SidebarContent />
       </aside>
     </>

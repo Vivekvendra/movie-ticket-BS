@@ -1,4 +1,5 @@
-﻿import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo } from 'react'
+import { useNavigate } from 'react-router-dom'
 import {
   Search,
   Filter,
@@ -29,6 +30,7 @@ const LANGUAGES = ['All', 'English', 'Telugu', 'Hindi', 'Tamil']
 const RATINGS = ['All', '8.5+', '8.0+', '7.5+']
 
 export default function MovieList() {
+  const navigate = useNavigate()
   const [movies, setMovies] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -155,7 +157,7 @@ export default function MovieList() {
   }
 
   return (
-    <div className="p-6 lg:p-8 space-y-8 min-h-screen bg-[#0c0d14] text-white">
+    <div className="p-6 lg:p-8 flex flex-col gap-6 min-h-screen bg-[#08090e] text-white">
       {/* ── Top Header Bar ── */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-[#121420] border border-[#1e2233] p-6 rounded-3xl shadow-xl">
         <div>
@@ -615,6 +617,27 @@ export default function MovieList() {
                   </div>
                 </div>
               )}
+
+              {/* Action Buttons */}
+              <div className="pt-4 border-t border-[#212435] flex items-center justify-end gap-3">
+                <button
+                  onClick={() => setSelectedMovie(null)}
+                  className="px-4 py-2.5 rounded-xl bg-[#171926] text-gray-400 hover:text-white font-semibold text-xs transition-all cursor-pointer"
+                >
+                  Close
+                </button>
+                <button
+                  onClick={() => {
+                    const mId = selectedMovie.id
+                    setSelectedMovie(null)
+                    navigate('/seats', { state: { movieId: mId } })
+                  }}
+                  className="px-6 py-2.5 rounded-xl bg-[#e50914] hover:bg-red-700 text-white font-bold text-xs transition-all cursor-pointer shadow-lg shadow-red-600/30 flex items-center gap-1.5"
+                >
+                  <Ticket size={14} />
+                  <span>Book Tickets</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
-﻿import { useState, useMemo } from 'react'
+import { useState, useMemo } from 'react'
+import { useNavigate } from 'react-router-dom'
 import {
   Building2,
   MapPin,
@@ -23,6 +24,7 @@ const CITIES = ['All', 'Hyderabad', 'Mumbai', 'Bengaluru', 'Delhi', 'Chennai', '
 const AMENITY_FILTERS = ['All', 'IMAX', '4DX', 'Dolby Atmos', 'Recliner']
 
 export default function TheatreList() {
+  const navigate = useNavigate()
   const [theatres, setTheatres] = useState(INITIAL_THEATRES)
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedCity, setSelectedCity] = useState('All')
@@ -110,7 +112,7 @@ export default function TheatreList() {
   }
 
   return (
-    <div className="p-6 lg:p-8 space-y-7 min-h-screen bg-[#0c0d14] text-white">
+    <div className="p-6 lg:p-8 flex flex-col gap-6 min-h-screen bg-[#08090e] text-white">
 
       {/* ── Top Header Bar ── */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-[#121420] border border-[#1e2233] p-6 rounded-2xl shadow-xl">
@@ -451,12 +453,23 @@ export default function TheatreList() {
                 </div>
               </div>
 
-              <div className="pt-3 border-t border-[#212435] flex justify-end">
+              <div className="pt-3 border-t border-[#212435] flex items-center justify-end gap-3">
                 <button
                   onClick={() => setActiveTheatre(null)}
-                  className="px-6 py-2.5 rounded-xl bg-[#e50914] hover:bg-red-700 text-white font-bold text-xs transition-all cursor-pointer"
+                  className="px-4 py-2.5 rounded-xl bg-[#171926] text-gray-400 hover:text-white font-semibold text-xs transition-all cursor-pointer"
                 >
                   Close
+                </button>
+                <button
+                  onClick={() => {
+                    const tId = activeTheatre.id
+                    setActiveTheatre(null)
+                    navigate('/seats', { state: { theatreId: tId } })
+                  }}
+                  className="px-6 py-2.5 rounded-xl bg-[#e50914] hover:bg-red-700 text-white font-bold text-xs transition-all cursor-pointer shadow-lg shadow-red-600/30 flex items-center gap-1.5"
+                >
+                  <Ticket size={14} />
+                  <span>Book Seats Here</span>
                 </button>
               </div>
             </div>
