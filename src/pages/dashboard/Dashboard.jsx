@@ -347,7 +347,7 @@ export default function Dashboard() {
                 <p className="text-xs text-gray-400 mt-0.5">Real-time admission passes across multiplexes</p>
               </div>
               <button
-                onClick={() => navigate('/booking')}
+                onClick={() => navigate('/history')}
                 className="text-xs font-bold text-[#e50914] hover:underline cursor-pointer flex items-center gap-1"
               >
                 <span>View All</span>

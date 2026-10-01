@@ -18,9 +18,8 @@ import TheatreList from './pages/theatres/TheatreList'
 import SeatSelection from './pages/seats/SeatSelection'
 import BookingPage from './pages/booking/BookingPage'
 import PaymentPage from './pages/payment/PaymentPage'
-
-// Future Module placeholders
-import ComingSoon from './components/ComingSoon'
+import BookingHistory from './pages/history/BookingHistory'
+import ReportsAnalytics from './pages/reports/ReportsAnalytics'
 
 export default function App() {
   return (
@@ -47,8 +46,8 @@ export default function App() {
             <Route path="/seats" element={<SeatSelection />} />
             <Route path="/booking" element={<BookingPage />} />
             <Route path="/payment" element={<PaymentPage />} />
-            <Route path="/history" element={<ComingSoon title="Booking History" />} />
-            <Route path="/reports" element={<ComingSoon title="Reports & Analytics" />} />
+            <Route path="/history" element={<BookingHistory />} />
+            <Route path="/reports" element={<ReportsAnalytics />} />
           </Route>
 
           {/* Catch-all redirect */}
